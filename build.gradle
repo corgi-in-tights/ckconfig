@@ -1,0 +1,25 @@
+plugins {
+	id 'java'
+	id 'maven-publish'
+}
+
+version = project.project_version
+group = project.maven_group
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation "org.slf4j:slf4j-log4j12:${project.slf4j_version}"
+	implementation "org.yaml:snakeyaml:${project.yaml_version}"
+	implementation "org.jetbrains:annotations:24.0.1"
+}
+
+//publishing {
+//	publications {
+//	}
+//
+//	repositories {
+//	}
+//}
