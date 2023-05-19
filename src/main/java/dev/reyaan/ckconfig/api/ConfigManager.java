@@ -121,7 +121,7 @@ public class ConfigManager {
         List<Field> configOptions = new ArrayList<>();
 
         for (Field field : config.getClass().getDeclaredFields()) {
-            if (Modifier.isStatic(field.getModifiers())) {
+            if (Modifier.isPublic(field.getModifiers()) && Modifier.isStatic(field.getModifiers())) {
                 configOptions.add(field);
             }
         }
