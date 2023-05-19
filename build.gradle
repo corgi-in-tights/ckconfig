@@ -16,10 +16,19 @@ dependencies {
 	implementation "org.jetbrains:annotations:24.0.1"
 }
 
-//publishing {
-//	publications {
-//	}
-//
-//	repositories {
-//	}
-//}
+publishing {
+	publications {
+		maven(MavenPublication) {
+			from components.java
+		}
+	}
+	repositories {
+		maven {
+			url = "https://repo.repsy.io/mvn/corgi-in-tights/repo"
+			credentials {
+				username = "$System.env.REPSY_USERNAME"
+				password = "$System.env.REPSY_PASSWORD"
+			}
+		}
+	}
+}
